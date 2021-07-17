@@ -60,8 +60,14 @@ export class Device {
     this._sendMsg(frame_data);
   }
 
-  ingestDeviceTelemetry( /* device_telemetry */ ) {
-    // const { _ } = device_telemetry;
+  ingestDeviceActivate( /* activate_packet */ ) {
+    // const { _ } = activate_packet;
+  }
+
+  ingestDeviceTelemetry(telemetry_packet) {
+    // const { input_state } = telemetry_packet;
+
+    console.log(`Device[${this.id}] -> Telemetry Received!`, telemetry_packet);
 
     this._last_telemetry = (+new Date);
   }
